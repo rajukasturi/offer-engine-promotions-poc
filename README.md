@@ -42,7 +42,7 @@ git clone https://github.com/rajukasturi/offer-engine-promotions-poc.git
 cd offer-engine-promotions-poc
 ```
 
-2. Configure your database and Redis connections in `application.properties` or `application.yml`:
+2. Configure your database and Redis connections in `application.properties`:
 ```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/offers_db
 spring.datasource.username=your_username
@@ -68,21 +68,23 @@ The application will start on `http://localhost:8080` by default.
 ## Project Structure
 
 ```
-.
+offer-engine-promotions-poc/
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   └── com/sample/offer-engine-promotions/
-│   │   │       ├── controller/
-│   │   │       ├── service/
-│   │   │       ├── repository/
-│   │   │       ├── batch/
-│   │   │       ├── model/
-│   │   │       └── config/
+│   │   │   └── com/sample/offer_engine_promotions/
+│   │   │       ├── OfferEnginePromotionsApplication.java
+│   │   │       ├── evaluation/          # Offer evaluation logic
+│   │   │       ├── generator/           # Data generation utilities
+│   │   │       └── loader/              # Data loading and batch processing
 │   │   └── resources/
-│   │       └── application.properties
+│   │       └── application.properties   # Application configuration
 │   └── test/
-├── pom.xml
+│       └── java/
+├── .mvn/                                # Maven wrapper
+├── mvnw                                 # Maven wrapper script (Unix/Linux)
+├── mvnw.cmd                             # Maven wrapper script (Windows)
+├── pom.xml                              # Maven configuration
 └── README.md
 ```
 
@@ -93,6 +95,8 @@ The application will start on `http://localhost:8080` by default.
 - **PostgreSQL Integration** for reliable data persistence
 - **Redis Caching** for improved performance
 - **Spring Boot Starters** for simplified configuration
+- **Offer Evaluation** engine for processing promotional offers
+- **Data Generator** utilities for test data creation
 
 ## Testing
 
